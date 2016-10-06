@@ -7,59 +7,14 @@ angular.module('app.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+.controller('View1Ctrl', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
 
-    $scope.exercises = [
-        {
-            icon: 'img/pushup.jpg',
-            name: 'Pushups',
-            count: 20,
-            increase: 0,
-            decrease: 0
-        },
-        {
-            icon: 'img/squat.jpg',
-            name: 'Squats',
-            count: 15,
-            increase: 0,
-            decrease: 0
-        },
-        {
-            icon: 'img/pullup.jpg',
-            name: 'Pullups',
-            count: 10,
-            increase: 0,
-            decrease: 0
-        },
-        {
-            icon: 'img/row.jpg',
-            name: 'Rows',
-            count: 10,
-            increase: 0,
-            decrease: 0
-        },
-        {
-            icon: 'img/lunge.jpg',
-            name: 'Lunges',
-            count: 10,
-            increase: 0,
-            decrease: 0
-        },
-        {
-            icon: 'img/stepup.jpg',
-            name: 'Step Ups',
-            count: 10,
-            increase: 0,
-            decrease: 0
-        },
-        {
-            icon: 'img/situp.jpg',
-            name: 'Sit Ups',
-            count: 15,
-            increase: 0,
-            decrease: 0
-        }
-    ];
+    $http.get('data/exercise.json')
+        .then(function (success) {
+            $scope.exercises = success.data
+        });
+
+    $scope.workout = {}
 
     $scope.increase = function(index) {
         $scope.exercises[index].count += 1;
@@ -72,6 +27,10 @@ angular.module('app.view1', ['ngRoute'])
         $rootScope.newReport = newValue;
     });
 
+    $scope.countWorkout = function () {
+        console.log($scope.workout)
+    }
+
     $scope.getReport = function () {
 
         var arr = [];
@@ -82,7 +41,7 @@ angular.module('app.view1', ['ngRoute'])
 
         });
 
-        alert("Definetely you did a great workout! Check it in stat page!!!");
+        alert("Check your list on the 'Workout Page'");
 
     }
 

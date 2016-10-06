@@ -1,0 +1,51 @@
+[
+  {
+    "icon": "img/pushup.jpg/",
+    "name": "Pushups",
+    "count": 0,
+    "increase": 0,
+    "decrease": 0
+  },
+  {
+    "icon": "img/squat.jpg",
+    "name": "Squats",
+    "count": 0,
+    "increase": 0,
+    "decrease": 0
+  },
+  {
+    "icon": "img/pullup.jpg",
+    "name": "Pullups",
+    "count": 0,
+    "increase": 0,
+    "decrease": 0
+  },
+  {
+    "icon": "img/row.jpg",
+    "name": "Rows",
+    "count": 0,
+    "increase": 0,
+    "decrease": 0
+  },
+  {
+    "icon": "img/lunge.jpg",
+    "name": "Lunges",
+    "count": 0,
+    "increase": 0,
+    "decrease": 0
+  },
+  {
+    "icon": "img/stepup.jpg",
+    "name": "Step Ups",
+    "count": 0,
+    "increase": 0,
+    "decrease": 0
+  },
+  {
+    "icon": "img/situp.jpg",
+    "name": "Sit Ups",
+    "count": 0,
+    "increase": 0,
+    "decrease": 0
+  }
+]

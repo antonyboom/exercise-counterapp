@@ -1,19 +1,36 @@
 <div class="container">
     <div class="jumbotron">
 
-        <h2 align="center" ng-if="newReport != undefined">Excellent Work</h2>
-        <h2 align="center" ng-if="newReport == undefined">You didn't workout! Let's go and count it!</h2>
+        <h2 align="center" ng-if="newReport != undefined">Just do it!</h2>
+        <h2 align="center" ng-if="newReport == undefined">You didn't make any lists! Try to set one in the "Counter Page"</h2>
 
         <div class="container" ng-if="newReport != undefined">
             <div   class="col-sm-8">
                 <div class="pull-left">
-                    <div ng-repeat="rep in newReport | orderBy">
-                        <h3><label>{{rep.name}}</label> - {{rep.count}}</h3>
-                    </div>
+                    <table>
+                        <tr ng-repeat="rep in newReport | orderBy">
+                            <td class="col-xs-4"><h3 ng-class="{'strike': workout.isChecked == true}"><label>{{rep.name}}</label></h3></td>
+                            <td class="col-xs-4"><h3>{{rep.count}}</h3></td>
+                            <td class="col-xs-4">
+                                <div class="checkboxTwo">
+                                    <input type="checkbox"
+                                           value="1"
+                                           id="{{rep.name}}"
+                                           name=""
+                                           ng-model="workout.isChecked"
+                                           ng-click="countWorkout()"
+                                    />
+                                    <label for="{{rep.name}}"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="col-sm-4" align="center">
                 <img class="gif" ng-src="img/200w.gif" >
+                {{workout.isChecked.length}}
+                <img class="gif" ng-src="img/200w.gif" ng-if="workout.length == 6">
             </div>
         </div>
     </div>

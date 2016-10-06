@@ -3,12 +3,14 @@
 
 <div class="jumbotron">
 <div class="container">
+    <h3 align="center">How much are your going to make today?</h3>
+    <hr>
     <div class="row" ng-repeat="exercise in exercises">
         <div class="exercise-icon col-xs-2">
             <img ng-src="{{ exercise.icon }}"> </div>
 
         <div class="col-xs-6">
-            <p class="exercise-name"> {{ exercise.name }}</p>
+            <p class="exercise-name">{{ exercise.name }}</p>
         </div>
 
         <div class="col-xs-4 counters">
@@ -19,7 +21,7 @@
     </div>
 </div>
 <div class="container">
-    <button style="vertical-align: middle" class="btn btn-default pull-right" ng-click="getReport()">Report</button>
+    <button style="vertical-align: middle" class="btn btn-default pull-right" ng-click="getReport()">List it</button>
 </div>
 </div>
 
