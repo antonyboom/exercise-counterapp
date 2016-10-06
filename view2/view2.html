@@ -18,7 +18,7 @@
                                            id="{{rep.name}}"
                                            name=""
                                            ng-model="workout.isChecked"
-                                           ng-click="countWorkout()"
+                                           ng-disabled="rep.count == 0"
                                     />
                                     <label for="{{rep.name}}"></label>
                                 </div>
